@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Homework 10</title>
-	</head>
-	<body>
+	<meta charset="utf-8">
+	<title>Homework 10</title>
+</head>
+<body>
+	<script>
+		function initSlider(size) {
+			var counter = 0;
 
-	</body>
+			return {
+				up: function() {
+					counter = counter === size ? 0 : counter;
+					++counter;
+					console.log(counter);
+				},
+				down: function() {
+					counter = counter === 0 ? size : counter;
+      				--counter;
+					console.log(counter);
+    			},
+    			reset: function() {
+					counter = 0;
+					console.log(counter);
+				},
+				randomValue: function(n) {
+					n > 0 && n <= size ? counter = n : console.log("You entered an invalid value!");
+				}
+			}
+
+		}	
+	</script>
+</body>
 </html>
